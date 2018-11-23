@@ -1,6 +1,6 @@
 //q1
 public static int minPoints(int [][]m){
-	return minPoints(m,0,0,0);
+	return minPoints(m,0,0,1);
 }
 private static int minPoints(int [][]m, int i, int j, int number){
 	if(i == m.length)
@@ -8,9 +8,9 @@ private static int minPoints(int [][]m, int i, int j, int number){
 	if( j == m[0].length)
 		return Integer.MAX_VALUE;
 	if(i == m.length-1 && j == m[0].length-1)
-		return max(number-m[i][j],0);
-	int opt1 = minPoints(m,i,j+1,max(number-m[i][j],0));
-	int opt2 = minPoints(m,i+1,j,max(number-m[i][j],0));
+		return max(number-m[i][j],1);
+	int opt1 = minPoints(m,i,j+1,max(number-m[i][j],1));
+	int opt2 = minPoints(m,i+1,j,max(number-m[i][j],1));
 	return min(opt1,opt2);
 }
 
