@@ -27,3 +27,21 @@ private static int max(int a, int b){
 	else
 		return b;
 }
+ //q2
+public static boolean findX(int []a, int x){
+	int hi = a.length-2;
+	int low = 0;
+	int mid;
+	while(hi >= low)
+	{
+		mid = (hi + low)/2;
+		if(a[mid]+a[mid+1] == x)
+			return true;
+		if(a[mid] + a[mid+1] >x)
+			hi = mid -1;
+		else
+			low = mid + 1;
+	}
+	return false;
+}
+//time complexity Olog(n)
